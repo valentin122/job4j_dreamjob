@@ -7,8 +7,8 @@ public class Candidate {
     private int id;
 
     private String name;
-    String description;
-    LocalDateTime creationDate;
+    private String description;
+    private LocalDateTime creationDate;
 
     public Candidate(int id, String name) {
         this.id = id;

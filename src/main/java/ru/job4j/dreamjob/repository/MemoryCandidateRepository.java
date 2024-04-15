@@ -2,7 +2,6 @@ package ru.job4j.dreamjob.repository;
 
 import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob.model.Candidate;
-import ru.job4j.dreamjob.model.Vacancy;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -20,12 +19,12 @@ public class MemoryCandidateRepository implements CandidateRepository {
     private final Map<Integer, Candidate> candidates = new HashMap<>();
 
     private MemoryCandidateRepository() {
-        save(new Candidate(0, "Intern Java Developer", "Intern description", LocalDateTime.now()));
-        save(new Candidate(0, "Junior Java Developer", "Junior description", LocalDateTime.now()));
-        save(new Candidate(0, "Junior+ Java Developer", "Junior+ description", LocalDateTime.now()));
-        save(new Candidate(0, "Middle Java Developer", "Middle description", LocalDateTime.now()));
-        save(new Candidate(0, "Middle+ Java Developer", "Middle+ description", LocalDateTime.now()));
-        save(new Candidate(0, "Senior Java Developer", "Senior description", LocalDateTime.now()));
+        save(new Candidate(0, "Intern Java Developer", "Intern description"));
+        save(new Candidate(0, "Junior Java Developer", "Junior description"));
+        save(new Candidate(0, "Junior+ Java Developer", "Junior+ description"));
+        save(new Candidate(0, "Middle Java Developer", "Middle description"));
+        save(new Candidate(0, "Middle+ Java Developer", "Middle+ description"));
+        save(new Candidate(0, "Senior Java Developer", "Senior description"));
     }
 
     public static MemoryCandidateRepository getInstance() {
@@ -40,8 +39,8 @@ public class MemoryCandidateRepository implements CandidateRepository {
     }
 
     @Override
-    public void deleteById(int id) {
-        candidates.remove(id);
+    public boolean deleteById(int id) {
+        return candidates.remove(id) != null;
     }
 
     @Override

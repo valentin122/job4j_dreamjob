@@ -12,14 +12,25 @@ public class Candidate {
 
     private int cityId;
 
+    private int fileID;
+
     public Candidate() {
     }
 
-    public Candidate(int id, String name, String description, int cityId) {
+    public Candidate(int id, String name, String description, int cityId, int fileID) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.cityId = cityId;
+        this.fileID = fileID;
+    }
+
+    public int getFileID() {
+        return fileID;
+    }
+
+    public void setFileID(int fileID) {
+        this.fileID = fileID;
     }
 
     public int getCityId() {

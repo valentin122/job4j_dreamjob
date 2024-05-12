@@ -35,6 +35,7 @@ public class CandidateController {
         return "candidates/create";
     }
 
+    @PostMapping("/create")
     public String create(@ModelAttribute Candidate candidate, @RequestParam MultipartFile file, Model model) {
         try {
             candidateService.save(candidate, new FileDto(file.getOriginalFilename(), file.getBytes()));

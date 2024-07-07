@@ -96,11 +96,14 @@ public class Candidate {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (!(o instanceof Candidate candidate)) {
             return false;
         }
-        Candidate candidate = (Candidate) o;
-        return id == candidate.id;
+        return id == candidate.id
+                && cityId == candidate.cityId
+                && fileID == candidate.fileID
+                && Objects.equals(name, candidate.name)
+                && Objects.equals(description, candidate.description);
     }
 
     @Override

@@ -108,7 +108,7 @@ class Sql2oCandidateRepositoryTest {
         var isUpdated = sql2oCandidateRepository.update(updatedCandidate);
         var savedCandidate = sql2oCandidateRepository.findById(updatedCandidate.getId()).get();
         assertThat(isUpdated).isTrue();
-        assertThat(savedCandidate).usingRecursiveComparison().isEqualTo(updatedCandidate);
+        assertThat(savedCandidate).isEqualTo(updatedCandidate);
     }
 
     @Test

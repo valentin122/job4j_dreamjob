@@ -32,8 +32,8 @@ public class Sql2oUserRepository implements UserRepository {
             return Optional.ofNullable(user);
         } catch (Sql2oException e) {
             e.printStackTrace();
-            return Optional.empty();
         }
+        return Optional.empty();
     }
 
     @Override
